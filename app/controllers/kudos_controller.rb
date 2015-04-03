@@ -1,5 +1,6 @@
 class KudosController < ApplicationController
   before_action :set_kudo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /kudos
   # GET /kudos.json
@@ -24,7 +25,8 @@ class KudosController < ApplicationController
   # POST /kudos
   # POST /kudos.json
   def create
-    @kudo = Kudo.new(kudo_params)
+   @kudo = Kudo.new(kudo_params)
+   @kudo.giver = current_user
 
     respond_to do |format|
       if @kudo.save
