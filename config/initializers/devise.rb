@@ -4,13 +4,13 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '2dd3a50d9347b6e45a4d0f9d82038cf95a44a0df18a8fb4512ae7f136d802af5e2d092f6e25d80e973af133f15e42f32b0b005fff4ec05fbd89cf54731496301'
+  # config.secret_key = '4eb7f9e3cb185000d259dc7833e3125edd23ede2d122d11c66917303e43448f9f535dc4185affb46e9b30e3d9d5b514ce161f45d19619dc517e8f1592c9a5074'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -97,7 +97,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '075cd09d4b93a53c3873eded7aae1ac5747567940bb2af02ec397554341b4f963f8379e35cf8f844d9b255e283c26af7663f4e460654d545a6207322572a137e'
+  # config.pepper = '1d6818a6e0d65db61e95ea4875cd2386bd19040061d6be9ccfd935d65170528b25e879af56082d8b743c682e2ebf26b43b7598731450c79dfe0a08eafed3197d'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -256,4 +256,7 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  require "omniauth-google-oauth2"
+
+  config.omniauth :google_oauth2, ENV["GOOG_AUTH_CLIENT_ID"], ENV["GOOG_CLIENT_SECRET"],
 end
