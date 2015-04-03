@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403164842) do
+ActiveRecord::Schema.define(version: 20150403191257) do
+
+  create_table "kudoizations", force: :cascade do |t|
+    t.integer  "kudo_id"
+    t.integer  "kudotype_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "kudoizations", ["kudo_id"], name: "index_kudoizations_on_kudo_id"
+  add_index "kudoizations", ["kudotype_id"], name: "index_kudoizations_on_kudotype_id"
+
+  create_table "kudos", force: :cascade do |t|
+    t.integer  "kudotype_id"
+    t.integer  "giver_id"
+    t.integer  "receiver_id"
+    t.text     "comments"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "kudos", ["kudotype_id"], name: "index_kudos_on_kudotype_id"
+
+  create_table "kudotypes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

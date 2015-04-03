@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kudotypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kudotypes.each do |kudotype| %>
+      <tr>
+        <td><%= kudotype.name %></td>
+        <td><%= link_to 'Show', kudotype %></td>
+        <td><%= link_to 'Edit', edit_kudotype_path(kudotype) %></td>
+        <td><%= link_to 'Destroy', kudotype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kudotype', new_kudotype_path %>

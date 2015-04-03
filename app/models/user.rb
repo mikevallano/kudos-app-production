@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
+  has_many :given_kudos, class_name: 'Kudo', foreign_key: 'giver_id'
+  has_many :received_kudos, class_name: 'Kudo', foreign_key: 'receiver_id'
+
   def set_default_role
     self.role ||= :user
   end
