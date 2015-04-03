@@ -69,6 +69,6 @@ class KudosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kudo_params
-      params.require(:kudo).permit(:kudotype_id, :giver_id, :receiver_id, :comments)
+      params.require(:kudo).permit(:giver_id, :receiver_id, :comments, :kudotype_ids => [])
     end
 end
