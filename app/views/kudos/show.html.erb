@@ -1,18 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Kudotype:</strong>
-  <%= @kudo.kudotype %>
-</p>
 
 <p>
   <strong>Giver:</strong>
-  <%= @kudo.giver_id %>
+  <%= @kudo.giver.name %>
 </p>
 
 <p>
   <strong>Receiver:</strong>
-  <%= @kudo.receiver_id %>
+  <%= @kudo.receiver.name %>
 </p>
 
 <p>

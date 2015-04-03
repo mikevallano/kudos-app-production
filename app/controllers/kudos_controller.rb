@@ -28,6 +28,7 @@ class KudosController < ApplicationController
 
     respond_to do |format|
       if @kudo.save
+        UserNotifier.send_notification_email(current_user).deliver
         format.html { redirect_to @kudo, notice: 'Kudo was successfully created.' }
         format.json { render :show, status: :created, location: @kudo }
       else

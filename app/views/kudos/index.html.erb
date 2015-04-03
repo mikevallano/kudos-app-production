@@ -16,9 +16,8 @@
   <tbody>
     <% @kudos.each do |kudo| %>
       <tr>
-        <td><%= kudo.kudotype %></td>
-        <td><%= kudo.giver_id %></td>
-        <td><%= kudo.receiver_id %></td>
+        <td><%= kudo.giver.name %></td>
+        <td><%= kudo.receiver.name %></td>
         <td><%= kudo.comments %></td>
         <td><%= link_to 'Show', kudo %></td>
         <td><%= link_to 'Edit', edit_kudo_path(kudo) %></td>

@@ -12,21 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :kudotype_id %><br>
-    <%= f.text_field :kudotype_id %>
+  <%= hidden_field_tag "kudo[kudotype_ids][]", nil %>
+  <% Kudotype.all.each do |kudotype| %>
+    <%= check_box_tag "kudo[kudotype_ids][]",
+    kudotype.id, @kudo.kudotype_ids.include?(kudotype.id),
+    id: dom_id(kudotype) %>
+    <%= label_tag dom_id(kudotype), kudotype.name %><br>
+  <% end %>
   </div>
-  <div class="field">
-    <%= f.label :giver_id %><br>
-    <%= f.number_field :giver_id %>
-  </div>
-  <div class="field">
-    <%= f.label :receiver_id %><br>
-    <%= f.number_field :receiver_id %>
-  </div>
-  <div class="field">
-    <%= f.label :comments %><br>
-    <%= f.text_area :comments %>
-  </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
