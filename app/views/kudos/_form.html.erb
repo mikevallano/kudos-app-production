@@ -21,6 +21,15 @@
   <% end %>
   </div>
 
+  <div class="field">
+    <%= f.label :receiver_id %><br>
+    <%= f.collection_select(:receiver_id, User.all, :id, :name) %>
+  </div>
+
+   <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>
 
 
   <div class="actions">
