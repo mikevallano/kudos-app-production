@@ -5,7 +5,12 @@ class KudosController < ApplicationController
   # GET /kudos
   # GET /kudos.json
   def index
-    @kudos = Kudo.all
+
+    if current_user.admin?
+      @kudos = Kudo.all
+    else
+      @kudos = Kudo.where("receiver_id = ?", current_user[:id])
+    end
   end
 
   # GET /kudos/1
