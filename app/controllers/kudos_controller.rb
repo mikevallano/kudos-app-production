@@ -32,10 +32,12 @@ class KudosController < ApplicationController
   def create
    @kudo = Kudo.new(kudo_params)
    @kudo.giver = current_user
+   receiver = @kudo.receiver
+   kudo = @kudo
 
     respond_to do |format|
       if @kudo.save
-        UserNotifier.send_notification_email(current_user).deliver
+        UserNotifier.send_notification_email(kudo).deliver
         format.html { redirect_to @kudo, notice: 'Kudo was successfully created.' }
         format.json { render :show, status: :created, location: @kudo }
       else
