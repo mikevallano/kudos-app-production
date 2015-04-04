@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403195850) do
+ActiveRecord::Schema.define(version: 20150404191002) do
 
   create_table "kudoizations", force: :cascade do |t|
     t.integer  "kudo_id"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20150403195850) do
   add_index "kudoizations", ["kudotype_id"], name: "index_kudoizations_on_kudotype_id"
 
   create_table "kudos", force: :cascade do |t|
-    t.integer  "kudotype_id"
     t.integer  "giver_id"
     t.integer  "receiver_id"
     t.text     "comments"
