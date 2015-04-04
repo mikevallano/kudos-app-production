@@ -10,10 +10,11 @@ puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
 
-10.times do User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password(8))
+10.times do User.create(name: Faker::Name.name, email: Faker::Internet.email,
+  password: Faker::Internet.password(8))
 end
 
-user_id_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+user_seed_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 Kudotype.create(name: "Passion")
 Kudotype.create(name: "Teamwork")
@@ -23,10 +24,18 @@ Kudotype.create(name: "Creativity")
 Kudotype.create(name: "Expertise")
 Kudotype.create(name: "Customer Service")
 
-kudotype_id_array = [1, 2, 3, 4, 5, 6]
+kudotype_seed_array = [1, 2, 3, 4, 5, 6]
 
+10.times do
 
-kudotype_id1 = kudotype_id_array.sample
-kudotype_id2 = kudotype_id_array.[kudotype_id1 - 2]
+giver_seed = user_seed_array.sample
+receiver_seed = user_seed_array[giver_seed -2]
 
-10.times do Kudo.create(giver_id: user_id_array.sample, receiver_id: user_id_array[giver_id - 2], kudotype_id = [kudotype_id1, kudotype_id2])
+kudotype_seed1 = kudotype_seed_array.sample
+kudotype_seed2 = kudotype_seed_array[kudotype_seed1 - 2]
+
+Kudo.create(giver_id: giver_seed,
+  receiver_id: receiver_seed,
+  comments: Faker::Lorem.sentence(2),
+  kudotype_ids: [kudotype_seed1, kudotype_seed2])
+end
