@@ -1,5 +1,7 @@
 class KudotypesController < ApplicationController
   before_action :set_kudotype, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_filter :admin_only, :except => :index
 
   # GET /kudotypes
   # GET /kudotypes.json

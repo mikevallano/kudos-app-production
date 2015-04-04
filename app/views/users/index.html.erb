@@ -3,6 +3,6 @@
 
 <% @user.each do |user| %>
 <ul>
-  <li><%= user.name if user.name %></li>
+  <li><%= link_to "#{user.name.titlecase}", user_path(user.id) %></li>
 </ul>
 <% end %>
