@@ -4,17 +4,26 @@
 
 <p>
   <strong>Giver:</strong>
-  <%= @kudo.giver.name if @kudo.giver.name %>
+  <%= @kudo.giver.name %>
 </p>
 
 <p>
   <strong>Receiver:</strong>
-  <%= @kudo.receiver.name if @kudo.receiver.name %>
+  <%= @kudo.receiver.name %>
+</p>
+
+<p>
+  <strong>Values:</strong>
+  <% @kudo.kudotypes.each do |k| %>
+  <ul>
+    <li><%= k.name %></li>
+  </ul>
+  <% end %>
 </p>
 
 <p>
   <strong>Comments:</strong>
-  <%= @kudo.comments if @kudo.comments %>
+  <%= @kudo.comments %>
 </p>
 
 <%= link_to 'Edit', edit_kudo_path(@kudo) %> |
