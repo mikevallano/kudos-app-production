@@ -1,8 +1,13 @@
-<h3>Welcome</h3>
+<div class="jumbotron">
+  <h1>Inflow Kudos</h1>
+  <% if user_signed_in? %>
 
-<% if user_signed_in? %>
-  <%= link_to "profile", user_path(current_user) %>
-<% end %>
+  <h2><button type="button" class="btn btn-default btn-lg main-btn">Give Kudos</button></h2>
+  <% else %>
+  <h2><button type="button" class="btn btn-default btn-lg main-btn"><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), :class => "btn-default btn-lg main-btn" %></button></h2>
+  <% end %>
+
+</div>
 
 
 
