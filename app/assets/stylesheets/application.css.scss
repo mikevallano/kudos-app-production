@@ -51,6 +51,19 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  color: #ffffff;
+}
+
+.main-btn {
+  border-color: #8f66a7;
+  background-color: #013E7F;
+  color: #ffffff;
+}
+
+.main-btn:hover {
+  border-color: #ffffff;
+  background-color: #013d91;
+  color: #ffffff;
 }
 
 
@@ -136,17 +149,4 @@ body {
     .collapse.in{
       display:block !important;
   }
-}
-
-
-.main-btn {
-  border-color: #8f66a7;
-  background-color: #013E7F;
-  color: #ffffff;
-}
-
-.main-btn:hover {
-  border-color: #ffffff;
-  background-color: #013d91;
-  color: #ffffff;
 }
