@@ -1,16 +1,12 @@
-<%# add navigation links to this file %>
-<li><%= link_to 'Home', root_path %></li>
-<li><%= link_to 'About', page_path('about') %></li>
 
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'About', page_path('about') %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
   <li><%= link_to 'View Kudos', kudos_path %></li>
   <li><%= link_to 'Give Kudos', new_kudo_path %></li>
 
-<% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+
 <% end %>
 
 <% if user_signed_in? %>

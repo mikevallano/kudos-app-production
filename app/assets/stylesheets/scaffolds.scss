@@ -49,20 +49,35 @@ div {
   }
 }
 
+.form-label {
+  color: #B1D1E2;
+  margin-bottom: -4px;
+  padding-bottom: -2px;
+}
+
 .kudocomments {
   height: 50px;
-  width: 400px;
+  width: 300px;
   // background-color: white;
   color: #113663;
-  font-size: .7em;
+  font-size: 1em;
   word-wrap: break-word;
 }
 
+
+#checkbox-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #B1D1E2;
+}
+
 #kudotypecheckbox {
-  font-size: 1.25em;
+  font-size: 1em;
   margin-left: auto;
   margin-right: auto;
+  // padding-left: 5px;
   width: 40%;
+  padding-top: 5px;
 }
 
 #notice {
