@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "inboundresources@gmail.com"
+  default from: "kudos@goinflow.com"
   layout 'mailer'
 end

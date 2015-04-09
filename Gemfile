@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem "omniauth-google-oauth2"
+gem 'bootstrap_form'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

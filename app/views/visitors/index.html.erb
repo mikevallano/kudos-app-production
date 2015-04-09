@@ -1,13 +1,16 @@
 <div class="jumbotron">
 
   <h1>Inflow Kudos</h1>
+
   <h3>Share the awesome stuff your coworkers have done with kudos!<h3>
 
   <% if user_signed_in? %>
 
   <h2>
+
     <%= link_to "Give Kudos", new_kudo_path,
     :class => "btn btn-default btn-lg main-btn" %>
+
   </h2>
 
   <% else %>

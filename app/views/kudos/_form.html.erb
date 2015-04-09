@@ -11,7 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div id= "kudotypecheckbox" class="field">
+    <p>Pick your Inflow values:<p>
   <%= hidden_field_tag "kudo[kudotype_ids][]", nil %>
   <% Kudotype.all.each do |kudotype| %>
     <%= check_box_tag "kudo[kudotype_ids][]",
@@ -22,17 +23,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :receiver_id %><br>
+    <%= f.label "Give kudos to:" %><br>
     <%= f.collection_select(:receiver_id, User.all, :id, :name) %>
   </div>
 
    <div class="field">
     <%= f.label :comments %><br>
-    <%= f.text_field :comments %>
+    <%= f.text_area :comments, :class => "kudocomments" %>
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
