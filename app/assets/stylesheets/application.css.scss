@@ -16,6 +16,13 @@
 
 main {
   padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: white;
 }
 
 body {
@@ -23,27 +30,34 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #013d91;
+  background-color: #113663;
   width: 100%;
+  font-family: 'Lato', sans-serif;
 }
 
 .jumbotron {
-  background-color: #B1D1E2;
+  background: image-url("kudo-background1.jpg") no-repeat;
+  // background-color: #B1D1E2;
   padding: 15%;
   width: 100%;
   margin-top: -40px;
   margin-bottom: -5px;
   background-position:  center;
+  background-size: cover;
+  color: white;
 
 }
 
 .jumbotron h1 {
-  font-size: 6em;
+  font-family: 'Lato', sans-serif;
+  font-size: 5em;
+  font-weight: 900;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   color: #ffffff;
-  text-shadow: 2px 2px 0 #848384
+  text-shadow: 1px 1px 0 #848384;
+  margin-bottom: 2px;
 }
 
 .jumbotron h2 {
@@ -54,33 +68,60 @@ body {
   color: #ffffff;
 }
 
-.main-btn {
-  border-color: #8f66a7;
-  background-color: #013E7F;
+.jumbotron h3 {
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   color: #ffffff;
+}
+
+.jumbotron a {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.main-btn {
+  border-color: #A1562A;
+  background-color: #DA552F;
+  color: #ffffff;
+  width: 200px;
 }
 
 .main-btn:hover {
   border-color: #ffffff;
-  background-color: #013d91;
+  background-color: #e55932;
   color: #ffffff;
 }
 
 
 .navbar-inverse {
-  background-color: #123663;
+  background-color: #b1d1e2;
+  font-family: 'Lato', sans-serif;
 }
+
 .navbar-inverse .navbar-brand {
-  color: #ffffff;
+  color: #123663;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }
+
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
   color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }
+
 .navbar-inverse .navbar-text {
-  color: #ffffff;
+  color: #123663;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
+
 .navbar-inverse .navbar-nav > li > a {
-  color: #ffffff;
+  color: #123663;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
   color: #ffffff;
