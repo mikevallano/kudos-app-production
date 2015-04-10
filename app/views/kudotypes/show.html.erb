@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @kudotype.name %>
-</p>
+<div class="container">
+  <h1>Inflow Value Details</h1>
 
-<%= link_to 'Edit', edit_kudotype_path(@kudotype) %> |
-<%= link_to 'Back', kudotypes_path %>
+  <h3>Inflow Value:</h3>
+  <p>Name: <%= @kudotype.name %></p>
+
+  <%= link_to 'Edit', edit_kudotype_path(@kudotype) %> |
+  <%= link_to 'Back', kudotypes_path %>
+
+</div>

@@ -1,27 +1,32 @@
-<p id="notice"><%= notice %></p>
+ <div class="container">
 
-<h1>Listing Kudotypes</h1>
+  <h1>These are the current Inflow values</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="table-responsive">
+      <table class="table-striped">
+        <thead>
+          <tr>
+            <th>Inflow Value</th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @kudotypes.each do |kudotype| %>
-      <tr>
-        <td><%= kudotype.name %></td>
-        <td><%= link_to 'Show', kudotype %></td>
-        <td><%= link_to 'Edit', edit_kudotype_path(kudotype) %></td>
-        <td><%= link_to 'Destroy', kudotype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @kudotypes.each do |kudotype| %>
+            <tr>
+              <td><%= kudotype.name %></td>
+              <td><%= link_to 'Show', kudotype, :class => "btn btn-default" %></td>
+              <td><%= link_to 'Edit', edit_kudotype_path(kudotype), :class => "btn btn-default" %></td>
+              <td><%= link_to 'Destroy', kudotype, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
+              <% end %>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<br>
 
-<%= link_to 'New Kudotype', new_kudotype_path %>
+
+<p id="kudotype-index-btn">
+  <%= link_to 'Add a New Inflow Value', new_kudotype_path, :class => "btn btn-default" %>
+</p>

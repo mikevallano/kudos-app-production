@@ -16,7 +16,7 @@
     <%= f.collection_select(:receiver_id, User.order('name'), :id, :name) %>
   </div>
 
-  <div id= "kudotypecheckbox" class="field">
+  <div id="kudotypecheckbox" class="field">
     <p id="checkbox-title">Select the related Inflow values:</p>
       <%= hidden_field_tag "kudo[kudotype_ids][]", nil %>
       <% Kudotype.all.each do |kudotype| %>
@@ -33,7 +33,7 @@
   </div>
 
 
-  <div class="actions">
+  <div id ="kudo-submit" class="actions">
     <%= f.submit "Give Kudos", :class => "btn btn-primary" %>
   </div>
 <% end %>

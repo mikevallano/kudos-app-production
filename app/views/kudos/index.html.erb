@@ -1,35 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<h1>Listing Kudos</h1>
+  <h1>Check out the Kudos that have been given.</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Giver</th>
-      <th>Receiver</th>
-      <th>Comments</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="table-responsive">
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th>Giver</th>
+          <th>Receiver</th>
+          <th>Comments</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @kudos.each do |kudo| %>
-      <tr>
-        <td><%= kudo.giver.name %></td>
-        <td><%= kudo.receiver.name %></td>
-        <td><%= kudo.comments %></td>
-        <td><%= link_to 'Show', kudo %></td>
-        <% if kudo.giver = current_user || current_user.admin? %>
-        <td><%= link_to 'Edit', edit_kudo_path(kudo) %></td>
+      <tbody>
+        <% @kudos.each do |kudo| %>
+          <tr>
+            <td><%= kudo.giver.name %></td>
+            <td><%= kudo.receiver.name %></td>
+            <td><%= kudo.comments %></td>
+            <td><%= link_to 'View', kudo, :class => "btn btn-default" %></td>
+            <% if kudo.giver = current_user || current_user.admin? %>
+            <td><%= link_to 'Edit', edit_kudo_path(kudo), :class => "btn btn-default" %></td>
+            <% end %>
+            <% if current_user.admin? %>
+            <td><%= link_to 'Destroy', kudo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
+            <% end %>
+          </tr>
         <% end %>
-        <% if current_user.admin? %>
-        <td><%= link_to 'Destroy', kudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
-
-<%= link_to 'New Kudo', new_kudo_path %>

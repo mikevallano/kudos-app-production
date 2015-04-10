@@ -49,6 +49,38 @@ div {
   }
 }
 
+.table-responsive {
+  margin-top: 5%;
+}
+
+#user-index {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+   background-color: #b1d1e2;
+   color: #113663;
+   padding: 5px;
+}
+
+.table-striped a {
+  color: #113663;
+  &:visited {
+  }
+  &:hover {
+    color: #113663;
+  }
+}
+
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+   background-color: #2e5989;
+   color: white;
+   padding: 5px;
+}
+
+
 .form-label {
   color: #B1D1E2;
   margin-bottom: -4px;
@@ -62,6 +94,20 @@ div {
   color: #113663;
   font-size: 1em;
   word-wrap: break-word;
+}
+
+.kudotype-input {
+  color: #113663;
+  font-size: 1em;
+}
+
+#kudo-submit {
+  margin-bottom: 5%;
+}
+
+#kudotype-index-btn {
+  margin-top: 5%;
+  margin-left: 5%;
 }
 
 
