@@ -6,6 +6,10 @@
   <p>Name: <%= @kudotype.name %></p>
 
   <%= link_to 'Edit', edit_kudotype_path(@kudotype) %> |
-  <%= link_to 'Back', kudotypes_path %>
+  <%= link_to 'View all values', kudotypes_path %>
+
+  <p id="kudotype-index-btn">
+    <%= link_to 'Add a New Inflow Value', new_kudotype_path, :class => "btn btn-default" %>
+  </p>
 
 </div>
