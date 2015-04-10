@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Kudotype</th>
       <th>Giver</th>
       <th>Receiver</th>
       <th>Comments</th>
@@ -17,9 +16,15 @@
     <% @kudos.each do |kudo| %>
       <tr>
         <td><%= kudo.giver.name %></td>
+        <td><%= kudo.receiver.name %></td>
+        <td><%= kudo.comments %></td>
         <td><%= link_to 'Show', kudo %></td>
+        <% if kudo.giver = current_user || current_user.admin? %>
         <td><%= link_to 'Edit', edit_kudo_path(kudo) %></td>
+        <% end %>
+        <% if current_user.admin? %>
         <td><%= link_to 'Destroy', kudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
