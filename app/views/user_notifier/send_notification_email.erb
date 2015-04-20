@@ -4,19 +4,18 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>You Got Kudos!</h1>
-    <p><%= @giver.name %> gave you kudos!</p>
-    <p>Check it out:</p>
+    <h2><%= @receiver.name.titlecase %> got kudos!</h2>
+    <p>Here's what <%= @giver.name %> had to say:</p>
     <p><%= @kudo.comments %></p>
-    <p>You supported the following values:</p>
+    <p>Kudos for supporting the following values:</p>
     <% @kudo.kudotypes.each do |k| %>
     <ul>
       <li><%= k.name %></li>
     </ul>
     <% end %>
-    <p>Great work supporting Inflow's values! You can return the favor by
-    <%= link_to 'giving kudos', new_kudo_url %>, or check out what's going on
-    <%= link_to 'at Inflow Kudos', root_url %>.</p>
+    <p>Great work supporting Inflow's values!
+      You give your own kudos and see all kudos given with the
+    <%= link_to 'Inflow Kudos Web App', root_url %>.</p>
 
   </body>
 
