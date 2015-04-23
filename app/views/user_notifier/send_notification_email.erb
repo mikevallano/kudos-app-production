@@ -6,7 +6,8 @@
   <body>
     <h2>Kudos to: <%= @receivers %></h2>
     <p>Here's what <%= @giver.name %> had to say:</p>
-    <p><%= @kudo.comments %></p>
+    <h3><%= @kudo.comments %></h3>
+    <br>
     <p>Kudos for supporting the following values:</p>
     <% @kudo.kudotypes.each do |k| %>
     <ul>
