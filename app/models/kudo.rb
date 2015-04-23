@@ -11,21 +11,14 @@ class Kudo < ActiveRecord::Base
   end
 
 
-  def the_receivers
-    self.receiver_id.each do |id|
-      u = User.find(id)
-      u.name
-    end
-  end
-
-  def receiver_names
+  def receivers
     names = []
     self.receiver_id.each do |id|
-      if id != nil
-        names << User.find(id).name
-      end
-      names
+      names << User.find(id).name
     end
+    names.join(", ")
   end
 
 end
+
+
