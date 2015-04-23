@@ -27,12 +27,16 @@ class KudosController < ApplicationController
   def create
    @kudo = Kudo.new(kudo_params)
    @kudo.giver = current_user
-   receiver = @kudo.receiver
-   kudo = @kudo
 
     respond_to do |format|
       if @kudo.save
-        UserNotifier.send_notification_email(kudo).deliver
+        @kudo.receiver_id.each do |id|
+          if id != nil
+            u = User.find(id)
+            u.received_kudos << @kudo
+          end
+        end
+        UserNotifier.send_notification_email(@kudo).deliver_now
         format.html { redirect_to @kudo, notice: 'Kudo was successfully created.' }
         format.json { render :show, status: :created, location: @kudo }
       else
@@ -74,6 +78,6 @@ class KudosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kudo_params
-      params.require(:kudo).permit(:giver_id, :receiver_id, :comments, :kudotype_ids => [])
+      params.require(:kudo).permit(:giver_id, :comments, :kudotype_ids => [], :receiver_id => [])
     end
 end

@@ -12,7 +12,7 @@
   <% end %>
 
   <div id ="giver-select" class="field">
-    <%= f.label "Give kudos to:", :class => "form-label" %><br>
+    <%= f.label :receiver_id, "Give kudos to:", :class => "form-label" %><br>
     <%= f.collection_select(:receiver_id, User.all, :id, :name, {}, {:multiple => true }) %>
   </div>
 

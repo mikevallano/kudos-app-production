@@ -6,7 +6,12 @@
   <h3>Giver: <%= @kudo.giver.name %></h3>
 
 
-  <h3>Receiver: <%= @kudo.receiver.name %></h3>
+  <h3>Receivers:</h3>
+    <% @kudo.receiver_id.each do |id| %>
+    <ul>
+      <li> <%= User.find(id).name %></li>
+    </ul>
+    <% end %>
 
   <h3>Values:</h3>
     <% @kudo.kudotypes.each do |k| %>
