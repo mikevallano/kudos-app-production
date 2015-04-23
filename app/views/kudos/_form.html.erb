@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div id ="giver-select" class="field">
     <%= f.label "Give kudos to:", :class => "form-label" %><br>
-    <%= f.collection_select(:receiver_id, User.order('name'), :id, :name) %>
+    <%= f.collection_select(:receiver_id, User.all, :id, :name, {}, {:multiple => true }) %>
   </div>
 
   <div id="kudotypecheckbox" class="field">
