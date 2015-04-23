@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem "omniauth-google-oauth2"
 gem 'pg'
+gem 'puma'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -18,7 +19,6 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
-gem 'thin'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
@@ -33,7 +33,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 group :production do
   gem 'rails_12factor'
