@@ -10,7 +10,12 @@ puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
 
-10.times do User.create(name: Faker::Name.name, email: Faker::Internet.email,
+pre =[('a'..'z')].map{|i| i.to_a}.flatten
+ename  =  (0...7).map{ pre[rand(pre.length)]  }.join
+domain = "@goinflow.com"
+fakeremail = ename + domain
+
+10.times do User.create(name: Faker::Name.name, email: fakeremail,
   password: Faker::Internet.password(8))
 end
 
