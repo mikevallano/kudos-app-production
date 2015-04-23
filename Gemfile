@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem "omniauth-google-oauth2"
+gem 'pg'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -35,7 +36,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 group :test do
