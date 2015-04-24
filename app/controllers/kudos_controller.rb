@@ -2,10 +2,9 @@ class KudosController < ApplicationController
   before_action :set_kudo, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  # GET /kudos
-  # GET /kudos.json
+
   def index
-      @kudos = Kudo.all
+      @kudos = Kudo.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /kudos/1

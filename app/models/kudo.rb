@@ -1,4 +1,7 @@
 class Kudo < ActiveRecord::Base
+  default_scope { order('created_at DESC') }
+
+
   belongs_to :giver, class_name: 'User'
   belongs_to :receiver, class_name: 'User'
   has_many :kudoizations

@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem "omniauth-google-oauth2"
 gem 'pg'
 gem 'puma'
+gem 'will_paginate', '~> 3.0.6'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
