@@ -13,7 +13,7 @@
 
   <div id ="giver-select" class="field">
     <%= f.label :receiver_id, "Give kudos to:", :class => "form-label" %><br>
-    <%= f.collection_select(:receiver_id, User.all, :id, :name, {:class => "form-control"}, {:multiple => true }) %>
+    <%= f.collection_select(:receiver_id, User.except_current(current_user), :id, :name, {:class => "form-control"}, {:multiple => true }) %>
   </div>
 
   <div id="kudotypecheckbox" class="field">
