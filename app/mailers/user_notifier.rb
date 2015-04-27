@@ -6,7 +6,7 @@ class UserNotifier < ApplicationMailer
     @comments = kudo.comments
     @receivers = @kudo.receivers
     @everyone = "everyone@goinflow.com", "everyone@conversioniq.com"
-    mail( :to => @everyone, :subject => "Kudos to: #{@receivers}!" )
+    mail( :to => @everyone, :from => @giver.email, :subject => "Kudos to: #{@receivers}!" )
   end
 
 end
