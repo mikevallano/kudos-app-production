@@ -20,7 +20,7 @@
             <td><%= kudo.receivers %></td>
             <td><%= kudo.comments %></td>
             <td><%= link_to 'View', kudo, :class => "btn btn-default" %></td>
-            <% if kudo.giver = current_user || current_user.admin? %>
+            <% if kudo.giver == current_user || current_user.admin? %>
             <td><%= link_to 'Edit', edit_kudo_path(kudo), :class => "btn btn-default" %></td>
             <% end %>
             <% if current_user.admin? %>
