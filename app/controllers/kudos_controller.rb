@@ -19,6 +19,10 @@ class KudosController < ApplicationController
 
   # GET /kudos/1/edit
   def edit
+    if @kudo.giver == current_user || current_user.admin?
+    else
+      redirect_to kudos_path
+    end
   end
 
   # POST /kudos

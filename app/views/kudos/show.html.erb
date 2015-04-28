@@ -24,7 +24,7 @@
     <h4><%= @kudo.comments %></h4>
 
 <br><br>
-  <% if @kudo.giver = current_user || current_user.admin? %>
+  <% if @kudo.giver == current_user || current_user.admin? %>
   <%= link_to 'Edit', edit_kudo_path(@kudo), :class => "btn btn-primary" %>
   <% end %>
 </div>
