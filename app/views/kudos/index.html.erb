@@ -16,7 +16,7 @@
       <tbody>
         <% @kudos.each do |kudo| %>
           <tr>
-            <td><%= kudo.giver.name.titlecase %></td>
+            <td><%= kudo.giver.name.titlecase if kudo.giver.name.present? %></td>
             <td><%= kudo.receivers %></td>
             <td><%= kudo.comments %></td>
             <td><%= link_to 'View', kudo, :class => "btn btn-default" %></td>

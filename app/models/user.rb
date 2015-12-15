@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   default_scope { order('LOWER(name)') }
   scope :recent, -> { where("created_at > ?", 1.week.ago)}
   scope :except_current, -> (user) { where.not(id: user) }
+  scope :current_employees, -> { where(not_current_employee: false) }
 
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?

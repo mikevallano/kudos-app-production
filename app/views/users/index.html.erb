@@ -16,7 +16,7 @@
       <tbody>
         <% @user.each do |user| %>
           <tr>
-            <td><%= link_to "#{user.name.titlecase}", user_path(user.id) %></td>
+            <td><%= link_to "#{user.name.titlecase}", user_path(user.id) if user.name.present? %></td>
             <td><%= user.given_kudos.count %></td>
             <td><%= user.received_kudos.count %></td>
           </tr>

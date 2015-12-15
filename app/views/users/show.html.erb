@@ -6,4 +6,9 @@
   <p>Email: <%= @user.email if @user.email %></p>
   <p>Kudos Given: <%= @user.given_kudos.count %></p>
   <p>Kudos Received: <%= @user.received_kudos.count %></p>
+
+
+  <% if current_user.admin? %>
+    <p><%= link_to 'Edit employee status', edit_user_path(@user), :class => "btn btn-default" %></p>
+  <% end %>
 </div>

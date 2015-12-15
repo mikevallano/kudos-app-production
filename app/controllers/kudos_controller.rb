@@ -4,7 +4,7 @@ class KudosController < ApplicationController
 
 
   def index
-      @kudos = Kudo.paginate(:page => params[:page], :per_page => 20)
+    @kudos = Kudo.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /kudos/1

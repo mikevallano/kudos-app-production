@@ -1,0 +1,14 @@
+<div>
+  <%= form_for(@user) do |f| %>
+
+  <div class="field">
+
+    <p>If this user is no longer an employee, check the box below. (a checked box indicates a former employee)</p>
+    <p>There will still be a record of their kudos, but they won't appear on the kudos list any longer.</p>
+    <%= f.label "Not a current employee?" %> <br />
+    <%= f.check_box :not_current_employee %> <br />
+    <%= f.submit "Update", :class => "btn btn-default" %>
+  </div>
+
+  </div>
+<% end %>
