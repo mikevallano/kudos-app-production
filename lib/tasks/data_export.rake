@@ -6,6 +6,6 @@ task :data_export => :environment do
       puts "done #{index}"
       csv << [k.giver.name, k.receivers, k.comments, k.created_at]
     end
-    DataExportMailer.send_data_export(csv).deliver_now
+    DataExportMailer.send_data_export.deliver_now
   end
 end
