@@ -29,10 +29,6 @@ class UsersController < ApplicationController
 
 
   private
-  def admin_only
-    (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
-  end
-
   def user_params
     params.require(:user).permit(:not_current_employee)
   end

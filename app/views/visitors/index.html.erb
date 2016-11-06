@@ -1,15 +1,19 @@
 <div class="jumbotron">
 
 
-  <h1>Inflow Kudos</h1>
+  <h1>Kudos Have Retired</h1>
 
-  <h3>Give kudos to share the awesome stuff your coworkers have done<h3>
+  <p>You can now give HighFives inside 15five at any time separate from your weekly report. Just click on HighFives in the main navigation.</p>
+
+  <p>Any time you give someone a HighFive in 15five, it will be shared in the #kudos channel in Slack with the whole company. </p>
+
+  <p>Who will you HighFive today?</p>
 
   <% if user_signed_in? %>
 
   <h2>
 
-    <%= link_to "Give Kudos", new_kudo_path,
+    <%= link_to "View Kudos", kudos_path,
     :class => "btn btn-default btn-lg main-btn" %>
 
   </h2>

@@ -74,7 +74,4 @@ class KudotypesController < ApplicationController
       params.require(:kudotype).permit(:name)
     end
 
-    def admin_only
-      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
-    end
 end
